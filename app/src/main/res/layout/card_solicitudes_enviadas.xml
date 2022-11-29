@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp"
+    app:cardCornerRadius="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="#00FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="#F8BBD0"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/ivClienteSoliE"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/imagen_gatito"
+            app:civ_border="false"
+            app:shapeAppearance="@style/ImageView.Corner" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvClienteSoliNameE"
+                style="@style/WhiteLexendRegular13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Poppins"
+                android:textColor="@color/pink_100"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvClienteSoliNicknameE"
+                style="@style/WhiteLexendRegular13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Poppins2107"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/pink_200"
+                    app:srcCompat="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/tvClienteSoliLocationE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Miraflores,Lima"
+                    android:textColor="@color/pink_200"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvClienteSoliTimeE"
+                style="@style/WhiteLexendRegular13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Enviada 20 Oct 2022 08:56"
+                android:textSize="14sp"
+                android:layout_marginStart="5dp"
+                android:textAllCaps="false"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:layout_gravity="end">
+
+                <Button
+                    android:id="@+id/btnSoliVerPerfilE"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="0dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:minHeight="0dp"
+                    android:padding="2dp"
+                    android:text="Ver Perfil"
+                    android:textColor="@color/pink_100" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

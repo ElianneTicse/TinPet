@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pink_100">#EA3570</color>
+    <color name="pink_200">#ff6e9e</color>
+    <color name="orange_100">#FF9137</color>
+    <color name="orange_200">#ffc267</color>
+    <color name="orange_smoke">#FD9251</color>
+    <color name="orange_300">#c66200</color>
+    <color name="orange_400">#FF8A00</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="unselected">#F27B50</color>
+    <color name="item_unselected">#FFCDD2</color>
+    <color name="item_selected">#F06292</color>
+</resources>

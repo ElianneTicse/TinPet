@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Anonymus.RegisterLocationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="4dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                style="@style/LayoutTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?actionBarItemBackground"
+                    android:clickable="true"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/btn_atras" />
+
+                <TextView
+                    style="@style/PinkSemiBoldSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:text="Ubicación" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/BlackRegularSubtittle12"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="Ingresa la ubicación en la que te encuentras para poder encontrar peluditos cerca a tu zona"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="¿Qué ubicación desea ingresar?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+
+            <EditText
+                android:id="@+id/etLocationRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:drawableStart="@drawable/inputicon_paw"
+                android:hint="Ingresa tu ubicación"
+                android:inputType="text"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnSiguienteLocation"
+                style="@style/BtnPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="100dp"
+                android:text="Siguiente" />
+
+
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pbCreatePetLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

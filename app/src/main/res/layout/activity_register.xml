@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Anonymus.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="4dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                style="@style/LayoutTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?actionBarItemBackground"
+                    android:clickable="true"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/btn_atras" />
+
+                <TextView
+                    style="@style/PinkSemiBoldSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:text="Registro" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/BlackRegularSubtittle12"
+                android:layout_width="374dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="16dp"
+                android:text="¡Ingresa un nickname! Este es único para identificar a tu mascota en la comunidad."
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+
+            <EditText
+                android:id="@+id/etNicknameRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:drawableStart="@drawable/inputicon_paw"
+                android:hint="Ingresa un nickname"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="¿Qué peludito deseas registrar?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+
+            <Spinner
+                android:id="@+id/spTipRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:entries="@array/spTipo"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="Sexo"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+
+            <Spinner
+                android:id="@+id/spSexoRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:entries="@array/spSexo"
+                android:spinnerMode="dialog" />
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="¿Cúal es su nombre?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+            <EditText
+                android:id="@+id/etNombreRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:drawableStart="@drawable/inputicon_paw"
+                android:hint="Nombre"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="¿Cúal es su edad?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+            <EditText
+                android:id="@+id/etEdadRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:drawableStart="@drawable/inputicon_paw"
+                android:hint="Edad (Meses)"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="¿Cúal es su raza?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+            <EditText
+                android:id="@+id/etRazaRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:drawableStart="@drawable/inputicon_paw"
+                android:hint="Raza"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:text="¿Cómo describes a tu mascota?"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+            <EditText
+                android:id="@+id/etDescripciónRegister"
+                style="@style/InputWhite"
+                android:layout_width="348dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:hint="Describe a tu mascotita"
+                android:gravity="top"
+                android:lines="5"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="125dp" />
+
+            <Button
+                android:id="@+id/btnRegisterPet"
+                style="@style/BtnPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="Siguiente" />
+
+
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pbCreatePetLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

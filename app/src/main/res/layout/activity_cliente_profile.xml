@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cliente.ClienteProfileActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavProfileCliente"
+        style="@style/BottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_client" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMiPerfil"
+                style="@style/PinkSemiBoldSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="Mi Perfil"
+                android:textSize="30sp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivClienteProfilePerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="40dp"
+                    android:scaleType="fitCenter"
+                    app:shapeAppearanceOverlay="@style/ImageView.CornerCircular"
+                    app:srcCompat="@drawable/imagen_gatito" />
+
+                <ImageView
+                    android:id="@+id/btnEditFoto"
+                    android:layout_width="65dp"
+                    android:layout_height="63dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginRight="45dp"
+                    android:src="@drawable/ic_editar_btn"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvNombreMiPerfil1"
+                style="@style/PinkSemiBoldSubtitle20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Lizzy" />
+
+            <TextView
+                android:id="@+id/tvNicknameMiPerfil"
+                style="@style/OrangeMedium16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="LizyBu" />
+
+            <TextView
+                android:paddingHorizontal="30dp"
+                style="@style/PinkLexendSemiBold14"
+                android:id="@+id/tv_static_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre" />
+
+            <TextView
+                style="@style/InputWhite"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:id="@+id/tvNombreMiPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="24dp">
+
+                    <TextView
+                        android:id="@+id/tv_static_edad"
+                        style="@style/PinkLexendSemiBold14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Edad" />
+
+                    <TextView
+                        android:id="@+id/tvEdadMiPerfil"
+                        style="@style/InputWhite"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="24dp">
+
+                    <TextView
+                        android:id="@+id/tv_static_raza"
+                        style="@style/PinkLexendSemiBold14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Raza" />
+
+                    <TextView
+                        android:id="@+id/tvRazaMiPerfil"
+                        style="@style/InputWhite"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_static_sexo"
+                        style="@style/PinkLexendSemiBold14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sexo" />
+
+                    <TextView
+                        android:id="@+id/tvSexoMiPerfil"
+                        style="@style/InputWhite"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:paddingHorizontal="30dp"
+                style="@style/PinkLexendSemiBold14"
+                android:id="@+id/tv_static_fotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fotos"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFEBEE"
+                android:layout_marginHorizontal="30dp">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/isPetImagesMiPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:backgroundTint="#FFEBEE"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="2000"
+                    app:iss_period="2000"
+                    app:iss_placeholder="@drawable/cat_love"
+                    app:iss_title_background="@string/app_name">
+                </com.denzcoskun.imageslider.ImageSlider>
+            </LinearLayout>
+
+            <TextView
+                android:paddingHorizontal="30dp"
+                android:paddingTop="10dp"
+                style="@style/PinkLexendSemiBold14"
+                android:id="@+id/tv_static_aboutme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sobre mi"/>
+
+            <TextView
+                android:id="@+id/tvDescripcionMiPerfil"
+                style="@style/InputWhite"
+                android:layout_marginHorizontal="30dp"
+                android:layout_width="350dp"
+                android:lines="7"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:paddingHorizontal="30dp"
+                android:paddingTop="10dp"
+                style="@style/PinkLexendSemiBold14"
+                android:id="@+id/tv_static_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"/>
+
+            <TextView
+                style="@style/InputWhite"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:id="@+id/tvUbicacionMiPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+
+            <com.google.android.gms.maps.MapView
+                android:layout_marginTop="10dp"
+                android:id="@+id/mvUbicacionMiPerfil"
+                android:layout_marginHorizontal="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="15dp">
+
+                <Button
+                    android:id="@+id/btnActualizar"
+                    style="@style/BtnPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Actualizar" />
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    style="@style/BtnSecondary"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cerrar sesión" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Administrador.AdmiNuevoTipActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llTittleNewTip"
+                style="@style/LayoutTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/ibAdmiNewTipBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?actionBarItemBackground"
+                    android:clickable="true"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp"
+                    app:srcCompat="@drawable/btn_atras" />
+                <TextView
+                    android:id="@+id/tvTittleTip"
+                    style="@style/PinkSemiBoldSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:text="Nueva Recomendación" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSubTittleTip"
+                style="@style/PinkRegularSubtittle14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Elige un icono representativo" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTipImgNew"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_icon_tip">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <EditText
+                android:id="@+id/etTittleTip"
+                style="@style/InputWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_paw"
+                android:ems="10"
+                android:hint="Ingrese el titulo"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etDescripcionTip"
+                style="@style/InputWhite"
+                android:layout_width="378dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="top"
+                android:hint="Ingresa la descripción"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:singleLine="false" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/ivAlceTip"
+                android:layout_width="221dp"
+                android:layout_height="254dp"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@drawable/alce_saludo" />
+
+            <Button
+                android:id="@+id/btnAddTip"
+                android:onClick="addTip"
+                android:layout_gravity="center"
+                android:layout_width="137dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Agregar"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TinPet!</string>
+    <string name="onboarding_welcome_tittle">¡Bienvenido a TinPet!</string>
+    <string name="onboarding_welcome">Empieza la gran aventura de encontrar amigos peludos para tu mascota.</string>
+    <string name="onboarding_share_tittle">¡Comparte!</string>
+    <string name="onboarding_share">Comparte fotos de tu peludito para que encuentre amigos cercanos y enterate sobre algunas recomendaciones para ellos.</string>
+    <string name="onboarding_connect_tittle">¡Conecta!</string>
+    <string name="onboarding_connect">Conoce a más petlovers que conforman esta maravillosa comunidad</string>
+    <string name="onboarding_nxt">Siguiente</string>
+    <string name="onboarding_bck">Anterior</string>
+    <string name="onboarding_start">Iniciar</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    //Spinners
+    <string-array name="spSexo">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
+    <string-array name="spTipo">
+        <item>Perro</item>
+        <item>Gato</item>
+    </string-array>
+</resources>

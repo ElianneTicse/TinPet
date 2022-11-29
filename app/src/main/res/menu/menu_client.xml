@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btnNavMenuClienteHome"
+        android:title="Inicio"
+        android:icon="@drawable/menu_icon_home"/>
+    <item
+        android:id="@+id/btnNavMenuClienteSolicitud"
+        android:title="Solicitud"
+        android:icon="@drawable/menu_icon_solicitudes"/>
+    <item
+        android:id="@+id/btnNavMenuClienteTips"
+        android:icon="@drawable/menu_icon_tips"
+        android:title="Tips"/>
+    <item
+        android:id="@+id/btnNavMenuClienteProfile"
+        android:icon="@drawable/menu_icon_profile"
+        android:title="Mi Perfil"/>
+
+</menu>

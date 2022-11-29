@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btnNavMenuAdmiHome"
+        android:title="Inicio"
+        android:icon="@drawable/menu_icon_home"/>
+    <item
+        android:id="@+id/btnNavMenuAdmiReportes"
+        android:title="Reportes"
+        android:icon="@drawable/menu_icon_reportes"/>
+    <item
+        android:id="@+id/btnNavMenuAdmiGestion"
+        android:icon="@drawable/menu_icon_tips"
+        android:title="Gestión"/>
+    <item
+        android:id="@+id/btnNavMenuAdmiProfile"
+        android:icon="@drawable/menu_icon_profile_admi"
+        android:title="Mi Perfil"/>
+
+</menu>
