@@ -42,6 +42,7 @@ public class PasswordActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Mascota mascota = (Mascota) intent.getSerializableExtra("mascota");
+        mascota.setRol("usuario");
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +56,7 @@ public class PasswordActivity extends AppCompatActivity {
                                     .addOnSuccessListener(documentReference -> {
                                         fAuth.getCurrentUser().sendEmailVerification();
                                         startActivity(new Intent(PasswordActivity.this,RegisterWelcomeActivity.class));
+                                        finish();
                                     })
                                     .addOnFailureListener(e -> {
                                         Toast.makeText(PasswordActivity.this, "No se pudo completar el registro", Toast.LENGTH_LONG).show();

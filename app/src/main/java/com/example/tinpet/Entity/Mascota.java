@@ -4,6 +4,7 @@ import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Mascota implements Serializable {
 
@@ -16,12 +17,34 @@ public class Mascota implements Serializable {
     private int edad;
     private String sobreMascota;
     private String urlFotoPrincipal;
-    private ArrayList<String> urlFotos;
+    private List<String> urlFotos;
     private String nombreDuenio;
     private int numeroDuenio;
     private String correoDuenio;
     private String ubicacion;
-    private String rol = "user";
+    private String rol;
+
+    public Mascota(){
+    }
+
+    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, List<String> urlFotos) {
+        this.nickname = nickname;
+        this.tipo = tipo;
+        this.sexo = sexo;
+        this.nombreMascota = nombreMascota;
+        this.edad = edad;
+        this.sobreMascota = sobreMascota;
+        this.urlFotoPrincipal = urlFotoPrincipal;
+        this.urlFotos = urlFotos;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
     public String getUid() {
         return uid;
@@ -36,8 +59,8 @@ public class Mascota implements Serializable {
         this.sobreMascota = sobreMascota;
     }
 
-    public Mascota(String uid, String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, ArrayList<String> urlFotos, String nombreDuenio, int numeroDuenio, String correoDuenio, String ubicacion) {
-        this.uid = uid;
+
+    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, ArrayList<String> urlFotos, String nombreDuenio, int numeroDuenio, String correoDuenio, String ubicacion, String rol) {
         this.nickname = nickname;
         this.tipo = tipo;
         this.sexo = sexo;
@@ -50,6 +73,7 @@ public class Mascota implements Serializable {
         this.numeroDuenio = numeroDuenio;
         this.correoDuenio = correoDuenio;
         this.ubicacion = ubicacion;
+        this.rol = rol;
     }
 
     public void setUid(String uid) {
@@ -112,11 +136,11 @@ public class Mascota implements Serializable {
         this.urlFotoPrincipal = urlFotoPrincipal;
     }
 
-    public ArrayList<String> getUrlFotos() {
+    public List<String> getUrlFotos() {
         return urlFotos;
     }
 
-    public void setUrlFotos(ArrayList<String> urlFotos) {
+    public void setUrlFotos(List<String> urlFotos) {
         this.urlFotos = urlFotos;
     }
 

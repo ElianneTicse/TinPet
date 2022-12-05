@@ -69,27 +69,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp" />
 
-            <EditText
-                android:id="@+id/etLocationRegister"
-                style="@style/InputWhite"
-                android:layout_width="348dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="16dp"
-                android:drawableStart="@drawable/inputicon_paw"
-                android:hint="Ingresa tu ubicación"
-                android:inputType="text"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="125dp" />
-
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_marginHorizontal="16dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginVertical="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etLocationRegister"
+                    style="@style/InputWhite"
+                    android:layout_width="348dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:drawableStart="@drawable/inputicon_paw"
+                    android:hint="Ingresa tu ubicación"
+                    android:inputType="text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="125dp" />
+
+                <ImageButton
+                    android:id="@+id/ibSearchMap"
+                    android:layout_width="31dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/inputicon_search" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/containerMap"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:layout_height="350dp"/>
 
             <Button
                 android:id="@+id/btnSiguienteLocation"

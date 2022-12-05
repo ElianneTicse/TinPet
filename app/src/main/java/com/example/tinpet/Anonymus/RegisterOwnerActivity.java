@@ -38,9 +38,11 @@ public class RegisterOwnerActivity extends AppCompatActivity {
                 mascota.setNombreDuenio(nombreDueno.getText().toString());
                 mascota.setNumeroDuenio(Integer.parseInt(numeroDueno.getText().toString()));
                 mascota.setCorreoDuenio(correoDueno.getText().toString());
+
                 Intent intent = new Intent(RegisterOwnerActivity.this,RegisterLocationActivity.class);
                 intent.putExtra("mascota",mascota);
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -6,60 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".Anonymus.NonVerifiedActivity">
 
+
     <TextView
         android:id="@+id/textView5"
         style="@style/PinkSemiBoldSubtitle"
-        android:layout_width="344dp"
-        android:layout_height="80dp"
+        android:layout_width="311dp"
+        android:layout_height="136dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="37dp"
         android:gravity="center"
-        android:text="¡Ups! No has verificado tu correo electrónico"
+        android:text="¡Ups! Ha ocurrido un error, verifica que tu correo este validado."
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="295dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="Verifica tu correo para poder ingresar a tu cuenta"
+        android:text="Verifica que tu correo y contraseña coincidan."
         android:textColor="#FFB800"
-        android:textSize="18dp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="211dp"
-        android:layout_height="284dp"
+        android:layout_width="244dp"
+        android:layout_height="356dp"
         android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_cat_sad" />
 
     <Button
-        android:id="@+id/button4"
-        style="@style/BtnPrimary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Volver a enviar"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnBackLogin"
+        android:onClick="backLogin"
         style="@style/BtnSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,4 +63,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="121dp"
+        android:layout_height="132dp"
+        android:layout_marginBottom="108dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintVertical_bias="0.899"
+        app:srcCompat="@drawable/paw_icon_r" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="193dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/paw_icon_l"
+        tools:layout_editor_absoluteY="298dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

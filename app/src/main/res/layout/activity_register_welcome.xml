@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="199dp"
-        android:layout_height="259dp"
+        android:layout_width="241dp"
+        android:layout_height="348dp"
         android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="333dp"
-        android:layout_height="94dp"
+        android:layout_width="376dp"
+        android:layout_height="134dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -28,9 +28,10 @@
         app:srcCompat="@drawable/ic_tinpet_style" />
 
     <TextView
-        style="@style/WhiteLexendRegular18"
-        android:layout_width="329dp"
-        android:layout_height="69dp"
+        style="@style/WhiteMedium10"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
         android:text="Te damos la bienvenida a nuestra comunidad, empieza a interactuar y conocer amigos peludos."
         android:textAlignment="center"

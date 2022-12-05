@@ -61,6 +61,7 @@ public class AdmiGestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admi_gestion);
+        setBottomNavigationView();
         recyclerView = findViewById(R.id.rvAdmiTipList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

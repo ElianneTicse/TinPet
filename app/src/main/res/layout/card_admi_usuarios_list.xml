@@ -33,7 +33,7 @@
             android:layout_marginEnd="24dp">
 
             <TextView
-                android:id="@+id/ivAdmiUsuarioNombre"
+                android:id="@+id/tvAdmiUsuarioNombre"
                 style="@style/PinkSemiBoldSubtitle14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:text="Lucy" />
 
             <TextView
-                android:id="@+id/ivAdmiUsuarioNickname"
+                android:id="@+id/tvAdmiUsuarioNickname"
                 style="@style/WhiteLexendRegular13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,12 +54,13 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/ivAdmiUserLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/location" />
 
                 <TextView
-                    android:id="@+id/ivAdmiUsuarioDireccion"
+                    android:id="@+id/tvAdmiUsuarioDireccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
@@ -69,11 +70,16 @@
             </LinearLayout>
 
         </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/ivAdmiUsuarioSexo"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginEnd="15dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/sexo_macho" />
     </LinearLayout>

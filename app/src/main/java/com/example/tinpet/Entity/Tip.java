@@ -5,8 +5,6 @@ import com.google.firebase.firestore.Exclude;
 import java.io.Serializable;
 
 public class Tip implements Serializable {
-
-    @Exclude
     private String titulo;
     private String descripcion;
     private int position;

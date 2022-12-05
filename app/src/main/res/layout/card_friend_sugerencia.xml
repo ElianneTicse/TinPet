@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardFriendSugerencia"
     android:layout_width="224dp"
     android:layout_height="275dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="16dp"
     app:strokeColor="#FCE4EC"
-    app:cardBackgroundColor="#FCE4EC">
+    app:cardBackgroundColor="#FCE4EC"
+    android:layout_marginEnd="10dp"
+    android:clickable="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="285dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="wrap_content"
+            android:id="@+id/ivFotoSugeridos"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
             android:src="@drawable/imagen_gatito"
             app:shapeAppearanceOverlay="@style/ImageView.Corner" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="155dp"
@@ -28,6 +37,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvSugeridosNombre"
                     style="@style/GraySemiBold14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -36,6 +46,7 @@
                     android:textAllCaps="false" />
 
                 <TextView
+                    android:id="@+id/tvSugeridosNickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -53,24 +64,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/location" />
+
                     <TextView
-                        android:id="@+id/textView2"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/pink_100"
-                        android:textSize="10sp"
+                        android:id="@+id/tvSugeridosLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Miraflores,Lima" />
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Miraflores,Lima"
+                        android:textColor="@color/pink_100"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/ivSugeridosSexo"
                 android:layout_width="49dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/sexo_macho"/>
+                android:layout_gravity="end|center"
+                app:srcCompat="@drawable/sexo_macho" />
 
         </LinearLayout>
 

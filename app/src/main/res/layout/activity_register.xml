@@ -33,11 +33,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/ibBackRegister1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="?actionBarItemBackground"
                     android:clickable="true"
+                    android:onClick="backButtonRegister"
                     android:paddingStart="16dp"
                     android:paddingEnd="12dp"
                     app:srcCompat="@drawable/btn_atras" />
@@ -63,8 +64,8 @@
             <EditText
                 android:id="@+id/etNicknameRegister"
                 style="@style/InputWhite"
-                android:layout_width="348dp"
-                android:layout_height="30dp"
+                android:layout_width="346dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:drawableStart="@drawable/inputicon_paw"
                 android:hint="Ingresa un nickname"
@@ -118,11 +119,12 @@
                 android:text="¿Cúal es su nombre?"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp" />
+
             <EditText
                 android:id="@+id/etNombreRegister"
                 style="@style/InputWhite"
-                android:layout_width="348dp"
-                android:layout_height="30dp"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:drawableStart="@drawable/inputicon_paw"
                 android:hint="Nombre"
@@ -139,11 +141,12 @@
                 android:text="¿Cúal es su edad?"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp" />
+
             <EditText
                 android:id="@+id/etEdadRegister"
                 style="@style/InputWhite"
-                android:layout_width="348dp"
-                android:layout_height="30dp"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:drawableStart="@drawable/inputicon_paw"
                 android:hint="Edad (Meses)"
@@ -159,11 +162,12 @@
                 android:text="¿Cúal es su raza?"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp" />
+
             <EditText
                 android:id="@+id/etRazaRegister"
                 style="@style/InputWhite"
-                android:layout_width="348dp"
-                android:layout_height="30dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:drawableStart="@drawable/inputicon_paw"
                 android:hint="Raza"
@@ -189,9 +193,120 @@
                 android:gravity="top"
                 android:lines="5"
                 android:inputType="textMultiLine"
-                android:layout_marginBottom="32dp"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="125dp" />
+
+            <TextView
+                style="@style/BlackRegularSubtittle14"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Fotos"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCreatePetFotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.9"
+                android:focusable="true"
+                tools:itemCount="0"
+                tools:listitem="@layout/item_image_upload" />
+
+            <GridLayout
+                android:id="@+id/glCreatePet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:useDefaultMargins="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_height="120dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/pink_100"
+                    android:layout_columnWeight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#2AEA3570"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_image_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:visibility="invisible"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/pink_100"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_image_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <ProgressBar
+                android:id="@+id/pbCreatePetPhotoRegister"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:max="100"
+                android:outlineAmbientShadowColor="@color/pink_100"
+                android:progress="0"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/ibCreatePetPhotoAttach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:onClick="uploadPhotoFromDocument"
+                    android:src="@drawable/btn_adjuntar" />
+
+                <ImageButton
+                    android:id="@+id/ibCreatePetPhotoCam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:onClick="uploadPhotoFromCamera"
+                    android:src="@drawable/btn_camara" />
+            </LinearLayout>
+
 
             <Button
                 android:id="@+id/btnRegisterPet"
@@ -199,9 +314,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:paddingVertical="10dp"
                 android:layout_marginBottom="20dp"
                 android:text="Siguiente" />
-
 
         </LinearLayout>
     </ScrollView>
