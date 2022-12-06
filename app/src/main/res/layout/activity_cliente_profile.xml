@@ -24,6 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavProfileCliente"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
@@ -73,14 +74,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/tvNombreMiPerfil1"
-                style="@style/PinkSemiBoldSubtitle20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Lizzy" />
-
-            <TextView
                 android:id="@+id/tvNicknameMiPerfil"
                 style="@style/OrangeMedium16"
                 android:layout_width="match_parent"
@@ -96,12 +89,12 @@
                 android:layout_height="wrap_content"
                 android:text="Nombre" />
 
-            <TextView
+            <EditText
                 style="@style/InputWhite"
                 android:layout_marginVertical="4dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:id="@+id/tvNombreMiPerfil"
+                android:id="@+id/etNombreMiPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"/>
@@ -127,8 +120,8 @@
                         android:layout_height="wrap_content"
                         android:text="Edad" />
 
-                    <TextView
-                        android:id="@+id/tvEdadMiPerfil"
+                    <EditText
+                        android:id="@+id/etEdadMiPerfil"
                         style="@style/InputWhite"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
@@ -150,8 +143,8 @@
                         android:layout_height="wrap_content"
                         android:text="Raza" />
 
-                    <TextView
-                        android:id="@+id/tvRazaMiPerfil"
+                    <EditText
+                        android:id="@+id/etRazaMiPerfil"
                         style="@style/InputWhite"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
@@ -170,8 +163,8 @@
                         android:layout_height="wrap_content"
                         android:text="Sexo" />
 
-                    <TextView
-                        android:id="@+id/tvSexoMiPerfil"
+                    <EditText
+                        android:id="@+id/etSexoMiPerfil"
                         style="@style/InputWhite"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
@@ -186,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fotos"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,6 +200,63 @@
                 </com.denzcoskun.imageslider.ImageSlider>
             </LinearLayout>
 
+            <GridLayout
+                android:id="@+id/glFotosEditar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="8dp"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:useDefaultMargins="true"
+                android:visibility="gone">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/pink_100"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#2AEA3570"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_image_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_height="120dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:visibility="invisible"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/pink_100"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_image_placeholder" />
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
             <TextView
                 android:paddingHorizontal="30dp"
                 android:paddingTop="10dp"
@@ -215,8 +266,8 @@
                 android:layout_height="wrap_content"
                 android:text="Sobre mi"/>
 
-            <TextView
-                android:id="@+id/tvDescripcionMiPerfil"
+            <EditText
+                android:id="@+id/etDescripcionMiPerfil"
                 style="@style/InputWhite"
                 android:layout_marginHorizontal="30dp"
                 android:layout_width="350dp"
@@ -233,15 +284,16 @@
                 android:layout_height="wrap_content"
                 android:text="Ubicación"/>
 
-            <TextView
+            <EditText
                 style="@style/InputWhite"
                 android:layout_marginVertical="4dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:id="@+id/tvUbicacionMiPerfil"
+                android:id="@+id/etUbicacionMiPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"/>
+
 
             <com.google.android.gms.maps.MapView
                 android:layout_marginTop="10dp"
@@ -255,16 +307,16 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:paddingHorizontal="30dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp">
 
                 <Button
-                    android:id="@+id/btnActualizar"
+                    android:id="@+id/btnEditar"
                     style="@style/BtnPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Actualizar" />
+                    android:text="Editar" />
 
                 <Button
                     android:id="@+id/btnLogout"
@@ -274,8 +326,19 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cerrar sesión" />
+
+
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btnActualizar"
+                style="@style/BtnSecondary"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:text="Actualizar" />
 
         </LinearLayout>
     </ScrollView>

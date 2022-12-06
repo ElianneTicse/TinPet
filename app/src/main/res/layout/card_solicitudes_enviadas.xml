@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvClienteSoliNameE"
+                android:id="@+id/tvClienteSoliName"
                 style="@style/WhiteLexendRegular13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tvClienteSoliNicknameE"
+                android:id="@+id/tvClienteSoliNickname"
                 style="@style/WhiteLexendRegular13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                     app:srcCompat="@drawable/location" />
 
                 <TextView
-                    android:id="@+id/tvClienteSoliLocationE"
+                    android:id="@+id/tvClienteSoliLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
@@ -74,7 +74,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tvClienteSoliTimeE"
+                android:id="@+id/tvClienteSoliTime"
                 style="@style/WhiteLexendRegular13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:layout_gravity="end">
 
                 <Button
-                    android:id="@+id/btnSoliVerPerfilE"
+                    android:id="@+id/btnSoliVerPerfil"
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

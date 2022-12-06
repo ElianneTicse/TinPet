@@ -62,6 +62,7 @@
                 tools:layout_editor_absoluteY="71dp" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleviewSolicitudes"
                 android:layout_marginHorizontal="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

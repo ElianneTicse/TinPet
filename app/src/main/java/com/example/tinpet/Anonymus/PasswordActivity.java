@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+
 public class PasswordActivity extends AppCompatActivity {
 
     EditText password,passwordRepeat;
@@ -43,6 +45,7 @@ public class PasswordActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Mascota mascota = (Mascota) intent.getSerializableExtra("mascota");
         mascota.setRol("usuario");
+        mascota.setAmigos(new ArrayList<>());
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

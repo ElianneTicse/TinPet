@@ -11,6 +11,9 @@ public class Solicitudes implements Serializable {
     String iudMe;
     String status;
 
+    public Solicitudes(){
+    }
+
     public Solicitudes(String iudFriend, String iudMe, String status) {
         this.iudFriend = iudFriend;
         this.iudMe = iudMe;

@@ -92,7 +92,7 @@
                 android:paddingTop="10dp">
 
                 <Button
-                    android:id="@+id/btnClienteSoliVerP"
+                    android:id="@+id/btnSoliVerPerfil"
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                     android:fontFamily="@font/poppins_regular"
                     android:minHeight="0dp"
                     android:padding="2dp"
-                    android:text="Actualizar"
+                    android:text="Ver Perfil"
                     android:textColor="@color/pink_100" />
 
                 <Button

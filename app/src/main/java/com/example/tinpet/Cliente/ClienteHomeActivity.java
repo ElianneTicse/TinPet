@@ -57,11 +57,6 @@ public class ClienteHomeActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         EventChangeListener();
-        mascotaArrayList = new ArrayList<>();
-        recomendadosAdapter = new RecomendadosAdapter(ClienteHomeActivity.this,mascotaArrayList);
-        recyclerView.setAdapter(recomendadosAdapter);
-
-
     }
 
     private void EventChangeListener() {
@@ -82,6 +77,8 @@ public class ClienteHomeActivity extends AppCompatActivity {
                             }
                         }
                     }
+                    recomendadosAdapter = new RecomendadosAdapter(ClienteHomeActivity.this,mascotaArrayList);
+                    recyclerView.setAdapter(recomendadosAdapter);
                 }
             });
     }

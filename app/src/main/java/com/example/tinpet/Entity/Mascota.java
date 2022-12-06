@@ -23,8 +23,17 @@ public class Mascota implements Serializable {
     private String correoDuenio;
     private String ubicacion;
     private String rol;
+    private List<String> amigos;
 
     public Mascota(){
+    }
+
+    public List<String> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(List<String> amigos) {
+        this.amigos = amigos;
     }
 
     public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, List<String> urlFotos) {
