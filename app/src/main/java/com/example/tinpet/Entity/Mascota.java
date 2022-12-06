@@ -14,12 +14,12 @@ public class Mascota implements Serializable {
     private String tipo;
     private String sexo;
     private String nombreMascota;
-    private int edad;
+    private String edad;
     private String sobreMascota;
     private String urlFotoPrincipal;
     private List<String> urlFotos;
     private String nombreDuenio;
-    private int numeroDuenio;
+    private String numeroDuenio;
     private String correoDuenio;
     private String ubicacion;
     private String rol;
@@ -36,7 +36,7 @@ public class Mascota implements Serializable {
         this.amigos = amigos;
     }
 
-    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, List<String> urlFotos) {
+    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, String edad, String sobreMascota, String urlFotoPrincipal, List<String> urlFotos) {
         this.nickname = nickname;
         this.tipo = tipo;
         this.sexo = sexo;
@@ -59,7 +59,7 @@ public class Mascota implements Serializable {
         return uid;
     }
 
-    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota) {
+    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, String edad, String sobreMascota) {
         this.nickname = nickname;
         this.tipo = tipo;
         this.sexo = sexo;
@@ -69,7 +69,7 @@ public class Mascota implements Serializable {
     }
 
 
-    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, int edad, String sobreMascota, String urlFotoPrincipal, ArrayList<String> urlFotos, String nombreDuenio, int numeroDuenio, String correoDuenio, String ubicacion, String rol) {
+    public Mascota(String nickname, String tipo, String sexo, String nombreMascota, String edad, String sobreMascota, String urlFotoPrincipal, ArrayList<String> urlFotos, String nombreDuenio, String numeroDuenio, String correoDuenio, String ubicacion, String rol) {
         this.nickname = nickname;
         this.tipo = tipo;
         this.sexo = sexo;
@@ -121,11 +121,11 @@ public class Mascota implements Serializable {
         this.nombreMascota = nombreMascota;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
@@ -161,11 +161,11 @@ public class Mascota implements Serializable {
         this.nombreDuenio = nombreDuenio;
     }
 
-    public int getNumeroDuenio() {
+    public String getNumeroDuenio() {
         return numeroDuenio;
     }
 
-    public void setNumeroDuenio(int numeroDuenio) {
+    public void setNumeroDuenio(String numeroDuenio) {
         this.numeroDuenio = numeroDuenio;
     }
 

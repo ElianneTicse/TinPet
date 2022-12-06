@@ -191,7 +191,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else{
             Intent intent = new Intent(RegisterActivity.this,RegisterOwnerActivity.class);
-            Mascota mascota = new Mascota(nickname,tipo,sexo,nombre,Integer.parseInt(edadStr),aboutMe,listFotos.get(0),listFotos);
+            Mascota mascota = new Mascota(nickname,tipo,sexo,nombre,edadStr,aboutMe,listFotos.get(0),listFotos);
             intent.putExtra("mascota",mascota);
             startActivity(intent);
             finish();

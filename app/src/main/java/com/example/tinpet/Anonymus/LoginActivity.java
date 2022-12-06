@@ -49,14 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             String email = etCorreo.getText().toString();
             String password = etContrasena.getText().toString();
-
             if(email.isEmpty() || password.isEmpty()){
                 Toast.makeText(LoginActivity.this,"Complete todos los datos requeridos.",Toast.LENGTH_SHORT).show();
             }else {
                 login(email,password);
             }
         });
-
     }
 
     public void login(String email,String password){

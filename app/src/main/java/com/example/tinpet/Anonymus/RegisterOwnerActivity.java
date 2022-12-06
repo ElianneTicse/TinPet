@@ -36,7 +36,7 @@ public class RegisterOwnerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO: VALIDAAAAAAAAAAR (:
                 mascota.setNombreDuenio(nombreDueno.getText().toString());
-                mascota.setNumeroDuenio(Integer.parseInt(numeroDueno.getText().toString()));
+                mascota.setNumeroDuenio(numeroDueno.getText().toString());
                 mascota.setCorreoDuenio(correoDueno.getText().toString());
 
                 Intent intent = new Intent(RegisterOwnerActivity.this,RegisterLocationActivity.class);
