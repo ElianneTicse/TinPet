@@ -49,7 +49,7 @@
                             android:layout_marginLeft="16dp"
                             android:layout_marginTop="11dp"
                             android:background="?actionBarItemBackground"
-                            android:onClick="backButton"
+                            android:onClick="backButtonProfileDetalles"
                             android:scaleType="center"
                             android:src="@drawable/btn_atras"
                             app:layout_constraintStart_toStartOf="parent"

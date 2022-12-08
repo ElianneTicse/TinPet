@@ -66,10 +66,14 @@ public class LoginActivity extends AppCompatActivity {
                         Mascota mascota = snapshot.toObject(Mascota.class);
                         if(mascota.getRol().equals("usuario")){
                             //Cliente
-                            startActivity(new Intent(LoginActivity.this, ClienteHomeActivity.class));
+                            Intent intent = new Intent(LoginActivity.this, ClienteHomeActivity.class);
+                            intent.putExtra("mascota",mascota);
+                            startActivity(intent);
                             finish();
                         }else if(mascota.getRol().equals("admi")){
-                            startActivity(new Intent(LoginActivity.this, AdmiHomeActivity.class));
+                            Intent intent = new Intent(LoginActivity.this, AdmiHomeActivity.class);
+                            intent.putExtra("mascota",mascota);
+                            startActivity(intent);
                             finish();
                         }
                     });

@@ -24,8 +24,19 @@ public class Mascota implements Serializable {
     private String ubicacion;
     private String rol;
     private List<String> amigos;
+    private String raza;
+
+
 
     public Mascota(){
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
     }
 
     public List<String> getAmigos() {
@@ -84,6 +95,8 @@ public class Mascota implements Serializable {
         this.ubicacion = ubicacion;
         this.rol = rol;
     }
+
+
 
     public void setUid(String uid) {
         this.uid = uid;

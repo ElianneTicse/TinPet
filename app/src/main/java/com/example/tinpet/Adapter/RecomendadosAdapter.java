@@ -47,7 +47,7 @@ public class RecomendadosAdapter extends RecyclerView.Adapter<RecomendadosAdapte
         if (mascota.getUrlFotos() != null && !mascota.getUrlFotos().isEmpty()){
             String urlFoto = mascota.getUrlFotos().get(0).toString();
             System.out.println(urlFoto);
-            Glide.with(holder.ivUsuario).load(urlFoto).into(holder.ivUsuario);
+            Glide.with(holder.ivUsuario).load(urlFoto).override(225,200).into(holder.ivUsuario);
         }else{
             Glide.with(holder.ivUsuario).load("https://img.freepik.com/foto-gratis/lindo-perrito-haciendose-pasar-persona-negocios_23-2148985938.jpg?w=1060&t=st=1670223600~exp=1670224200~hmac=d5a7356054a901184f5586e5abc6e56551e1a21b40bfc1b5cd6d246b373573d2").into(holder.ivUsuario);
         }
@@ -58,7 +58,8 @@ public class RecomendadosAdapter extends RecyclerView.Adapter<RecomendadosAdapte
         }
         holder.mcFriend.setOnClickListener(v -> {
             Intent intent = new Intent(context, ClienteDetallesProfileActivity.class);
-            intent.putExtra("mascota",mascota);
+            intent.putExtra("id",mascota.getUid());
+            intent.putExtra("solicitud","");
             context.startActivity(intent);
         });
     }

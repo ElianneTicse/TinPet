@@ -16,13 +16,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tinpet.Adapter.RecomendadosAdapter;
 import com.example.tinpet.Entity.Mascota;
 import com.example.tinpet.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -34,13 +38,14 @@ import java.util.ArrayList;
 
 public class ClienteHomeActivity extends AppCompatActivity {
 
-    TextView tv_welcome_static;
+    TextView tv_welcome_static, tv_welcome_user;
     BottomNavigationView bottomNavigationView;
     RecyclerView recyclerView;
-    ArrayList<Mascota> mascotaArrayList;
+    ArrayList<Mascota> mascotaArrayList = new ArrayList<>();
     FirebaseFirestore db;
     RecomendadosAdapter recomendadosAdapter;
     FirebaseAuth firebaseAuth;
+    ShapeableImageView shapeableImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,8 @@ public class ClienteHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cliente_home);
         setBottomNavigationView();
         tv_welcome_static = findViewById(R.id.tv_welcome_static);
+        tv_welcome_user = findViewById(R.id.tv_welcome_user);
+
         recyclerView = findViewById(R.id.rvClienteHomeSugerencias);
 
         recyclerView.setHasFixedSize(true);
@@ -56,7 +63,20 @@ public class ClienteHomeActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        EventChangeListener();
+        shapeableImageView = findViewById(R.id.iv_profile_view);
+
+        db.collection("mascota").document(firebaseAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Mascota mascota = documentSnapshot.toObject(Mascota.class);
+                Glide.with(shapeableImageView).load(mascota.getUrlFotoPrincipal()).override(120,120).into(shapeableImageView);
+                tv_welcome_user.setText(mascota.getNombreMascota());
+                EventChangeListener();
+            }
+        });
+
+
+
     }
 
     private void EventChangeListener() {

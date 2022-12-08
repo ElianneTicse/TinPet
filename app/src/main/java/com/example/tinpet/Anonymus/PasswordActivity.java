@@ -51,10 +51,12 @@ public class PasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO:VERIFICAR
+
                 fAuth.createUserWithEmailAndPassword(mascota.getCorreoDuenio(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            mascota.setUid(fAuth.getCurrentUser().getUid());
                             ref.document(fAuth.getCurrentUser().getUid()).set(mascota)
                                     .addOnSuccessListener(documentReference -> {
                                         fAuth.getCurrentUser().sendEmailVerification();

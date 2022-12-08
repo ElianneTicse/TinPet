@@ -1,9 +1,11 @@
 package com.example.tinpet.Cliente;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -11,16 +13,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.tinpet.Entity.Mascota;
 import com.example.tinpet.Entity.Solicitudes;
 import com.example.tinpet.R;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,6 +42,10 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
     Button btnsolicitud;
     MapView mapView;
     List<String> listaAmigos;
+    ImageSlider imgSlider;
+
+    String pendiente1 = "";
+    String idsoli;
 
     FirebaseFirestore firestore;
     FirebaseAuth mAuth;
@@ -57,11 +71,12 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
         tituloUbicacion = findViewById(R.id.ubicacionclienteTitulo);
         btnsolicitud = findViewById(R.id.btnenviarSolicitud);
         mapView = findViewById(R.id.mapView2);
+        imgSlider = findViewById(R.id.isPetImages);
 
 
         String id = getIntent().getStringExtra("id");
         String solicitud = getIntent().getStringExtra("solicitud");
-        String idsoli = getIntent().getStringExtra("idsoli");
+        idsoli = getIntent().getStringExtra("idsoli");
 
 
         firestore.collection("mascota").document(id).get()
@@ -76,9 +91,39 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
                         direccion.setText(mascota.getUbicacion());
                         telefono.setText(mascota.getNumeroDuenio());
                         sobreMascota.setText(mascota.getSobreMascota());
-                        razaMascota.setText(mascota.getRol());
+                        razaMascota.setText(mascota.getRaza());
                         edadMascota.setText(mascota.getEdad());
                         String sexo = mascota.getSexo();
+
+                        firestore.collection("solicitudes").whereEqualTo("iudMe",mAuth.getUid()).get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if(task.isSuccessful()){
+                                            Log.d("msg","entroo");
+                                            for(QueryDocumentSnapshot document : task.getResult()){
+                                                if(document.getString("iudFriend").equals(id)){
+                                                    pendiente1 = document.getString("status");
+                                                    Log.d("msg",pendiente1);
+                                                    if(pendiente1.equals("enviado")){
+                                                        Log.d("msg","entroo 2do if");
+                                                        idsoli = document.getId();
+                                                        btnsolicitud.setText("Eliminar solicitud :(");
+
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+
+                        ArrayList<SlideModel> slideModels = new ArrayList<>();
+                        for (String url : mascota.getUrlFotos()){
+                            slideModels.add(new SlideModel(url, ScaleTypes.CENTER_CROP));
+                        }
+
+                        imgSlider.setImageList(slideModels);
                         List<String> amigos = mascota.getAmigos();
                         if(sexo.equals("Macho")){
                             imgSexo.setImageResource(R.drawable.sexo_macho);
@@ -93,11 +138,12 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
                             btnsolicitud.setVisibility(View.GONE);
                         }
                         if(solicitud.equals("pendiente")){
-                            btnsolicitud.setText("Aceptar Solicitud");
+                            btnsolicitud.setText("Aceptar solicitud ☺");
                         }
                         if(solicitud.equals("enviada")){
-                            btnsolicitud.setText("Quitar Solicitud");
+                            btnsolicitud.setText("Eliminar solicitud :(");
                         }
+
                     }
                 });
 
@@ -108,6 +154,7 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
                     HashMap<String,Object> map = new HashMap<>();
                     map.put("status","aceptado");
                     firestore.collection("solicitudes").document(idsoli).update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+
                         @Override
                         public void onSuccess(Void unused) {
                             firestore.collection("mascota").document(mAuth.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -134,11 +181,11 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
                         }
                     });
 
-                }else if(solicitud.equals("enviada")){
+                }else if(solicitud.equals("enviada") || pendiente1.equals("enviado")){
                     firestore.collection("solicitudes").document(idsoli).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(ClienteDetallesProfileActivity.this,"Solicitud quitada exitosamente",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ClienteDetallesProfileActivity.this,"Solicitud eliminada exitosamente",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ClienteDetallesProfileActivity.this,ClienteHomeActivity.class));
                             finish();
                         }
@@ -149,11 +196,19 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(ClienteDetallesProfileActivity.this,"Solicitud enviada exitosamente",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ClienteDetallesProfileActivity.this,ClienteHomeActivity.class));
+                            finish();
                         }
                     });
                 }
             }
         });
 
+
+
+    }
+
+    public void backButtonProfileDetalles(View view){
+        onBackPressed();
     }
 }

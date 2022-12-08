@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.tinpet.Adapter.SolicitudAdapter;
@@ -57,5 +58,9 @@ public class ClienteSolicitudesListActivity extends AppCompatActivity {
         solicitudAdapter.notifyDataSetChanged();
         rvSolicitud.setAdapter(solicitudAdapter);
         solicitudAdapter.startListening();
+    }
+
+    public void backButtonSolicitudesList(View view){
+        onBackPressed();
     }
 }

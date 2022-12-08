@@ -46,7 +46,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
-    final int IMAGE_SELECTOR_MARGIN = 8;
+    private final int PERMISOS_CODE = 100;
+    private final int GALERIA_CODE = 101;
+    private final int CAMARA_CODE = 102;
+    private Bitmap bitmap;
 
     EditText inputNickname;
     EditText inputNombre;
@@ -181,10 +184,10 @@ public class RegisterActivity extends AppCompatActivity {
             inputNombre.requestFocus();
         }else if(raza.length()>10){
             inputRaza.setError("Solo se admiten como máximo 10 caracteres.");
-            inputNombre.requestFocus();
+            inputRaza.requestFocus();
         }else if(aboutMe.length()>250){
-            inputRaza.setError("Solo se admiten como máximo 250 caracteres.");
-            inputNombre.requestFocus();
+            inputDescripcion.setError("Solo se admiten como máximo 250 caracteres.");
+            inputDescripcion.requestFocus();
         }else if(listFotos.size()<3 || listFotos.size()>6){
                 rvFotos.requestFocus();
                 Toast.makeText(RegisterActivity.this, "Se deben subir entre 3 a 6 fotos", Toast.LENGTH_SHORT).show();
@@ -192,6 +195,7 @@ public class RegisterActivity extends AppCompatActivity {
         else{
             Intent intent = new Intent(RegisterActivity.this,RegisterOwnerActivity.class);
             Mascota mascota = new Mascota(nickname,tipo,sexo,nombre,edadStr,aboutMe,listFotos.get(0),listFotos);
+            mascota.setRaza(raza);
             intent.putExtra("mascota",mascota);
             startActivity(intent);
             finish();
@@ -265,6 +269,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void uploadPhotoFromCamera(View view) {
+        // Se piden los permisos para la cámara
+        if (checkSelfPermission(Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{Manifest.permission.CAMERA},PERMISOS_CODE);
+        }
+
         if (pbPhoto.getVisibility()==View.VISIBLE){
             Toast.makeText(RegisterActivity.this, "Espera a que se termine de subir la foto", Toast.LENGTH_SHORT).show();
         }else{
@@ -288,6 +297,8 @@ public class RegisterActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+
 
 
 
