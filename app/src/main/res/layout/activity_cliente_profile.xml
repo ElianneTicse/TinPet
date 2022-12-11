@@ -18,7 +18,7 @@
         app:menu="@menu/menu_client" />
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -57,20 +57,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_horizontal"
                     android:padding="40dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/ImageView.CornerCircular"
                     app:srcCompat="@drawable/imagen_gatito" />
-
-                <ImageView
-                    android:id="@+id/btnEditFoto"
-                    android:layout_width="65dp"
-                    android:layout_height="63dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="44dp"
-                    android:layout_marginRight="45dp"
-                    android:src="@drawable/ic_editar_btn"
-                    />
             </RelativeLayout>
 
             <TextView
@@ -97,13 +86,15 @@
                 android:id="@+id/etNombreMiPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"/>
+                android:text="TextView"
+                android:inputType="text"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="10dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -123,9 +114,9 @@
                     <EditText
                         android:id="@+id/etEdadMiPerfil"
                         style="@style/InputWhite"
-                        android:layout_width="100dp"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
-
+                        android:inputType="number"
                         android:text="TextView" />
                 </LinearLayout>
 
@@ -141,14 +132,17 @@
                         style="@style/PinkLexendSemiBold14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Raza" />
+                        android:text="Raza"
+                        />
 
                     <EditText
                         android:id="@+id/etRazaMiPerfil"
-                        style="@style/InputWhite"
-                        android:layout_width="100dp"
+                        style="@style/SpinnerWhite"
+                        android:entries="@array/spTipo"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:inputType="text"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -163,10 +157,11 @@
                         android:layout_height="wrap_content"
                         android:text="Sexo" />
 
-                    <EditText
+                    <Spinner
                         android:id="@+id/etSexoMiPerfil"
-                        style="@style/InputWhite"
-                        android:layout_width="100dp"
+                        style="@style/SpinnerWhite"
+                        android:entries="@array/spSexo"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
                 </LinearLayout>
@@ -199,6 +194,16 @@
                     app:iss_title_background="@string/app_name">
                 </com.denzcoskun.imageslider.ImageSlider>
             </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfilePet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.9"
+                android:focusable="true"
+                tools:itemCount="0"
+                tools:listitem="@layout/item_image_upload" />
 
             <GridLayout
                 android:id="@+id/glFotosEditar"
@@ -235,27 +240,45 @@
                         android:src="@drawable/ic_image_placeholder" />
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_height="120dp"
-                    android:layout_columnWeight="1"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginVertical="16dp"
-                    android:visibility="invisible"
-                    app:cardBackgroundColor="#00FFFFFF"
-                    app:cardCornerRadius="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/pink_100"
-                        android:scaleType="center"
-                        android:src="@drawable/ic_image_placeholder" />
-                </com.google.android.material.card.MaterialCardView>
             </GridLayout>
+
+            <LinearLayout
+                android:id="@+id/llAtachUploadPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="end"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/ibPerfilPetPhotoAttach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:onClick="uploadPhotoFromDocument"
+                    android:src="@drawable/btn_adjuntar" />
+
+                <ImageButton
+                    android:id="@+id/ibPerfilPetPhotoCam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:onClick="uploadPhotoFromCamera"
+                    android:src="@drawable/btn_camara" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbUpdateClientePhoto"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:max="100"
+                android:progress="0"
+                android:visibility="gone" />
+
 
             <TextView
                 android:paddingHorizontal="30dp"
@@ -272,6 +295,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_width="350dp"
                 android:lines="7"
+                android:inputType="textMultiLine"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
 
@@ -284,23 +308,41 @@
                 android:layout_height="wrap_content"
                 android:text="Ubicación"/>
 
-            <EditText
-                style="@style/InputWhite"
-                android:layout_marginVertical="4dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:id="@+id/etUbicacionMiPerfil"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etUbicacionMiPerfil"
+                    style="@style/InputWhite"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="30dp"
+                    android:hint="Ingresa tu ubicación"
+                    android:inputType="text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="125dp" />
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:id="@+id/ibSearchMapPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTint="@color/white"
+                    app:srcCompat="@drawable/inputicon_search" />
+            </LinearLayout>
 
 
-            <com.google.android.gms.maps.MapView
+            <FrameLayout
+            android:id="@+id/containerMap"
+            android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
-                android:id="@+id/mvUbicacionMiPerfil"
-                android:layout_marginHorizontal="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="30dp"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -319,15 +361,13 @@
                     android:text="Editar" />
 
                 <Button
-                    android:id="@+id/btnLogout"
                     style="@style/BtnSecondary"
+                    android:onClick="cerrarSesionCliente"
                     android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cerrar sesión" />
-
-
             </LinearLayout>
 
             <Button

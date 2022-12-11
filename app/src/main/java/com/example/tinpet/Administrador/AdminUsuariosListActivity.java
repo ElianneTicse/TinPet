@@ -46,8 +46,7 @@ public class AdminUsuariosListActivity extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
-        db.collection("mascota").whereNotEqualTo("rol","admi")
-        .orderBy("nombreMascota", Query.Direction.ASCENDING)
+        db.collection("mascota").whereEqualTo("rol","usuario")
             .addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -64,6 +63,7 @@ public class AdminUsuariosListActivity extends AppCompatActivity {
                 }
             });
     }
+
 
     public void backButtonUsuariosList(View view){
         onBackPressed();

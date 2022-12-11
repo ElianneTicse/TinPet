@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.tinpet.Anonymus.RegisterActivity;
+import com.example.tinpet.Cliente.ClienteProfileActivity;
 import com.example.tinpet.R;
 
 import java.util.List;
@@ -52,7 +53,11 @@ public class ImageUploadAdapter extends RecyclerView.Adapter<ImageUploadAdapter.
             super(itemView);
             ivImage = itemView.findViewById(R.id.ivItemImageUpload);
             itemView.findViewById(R.id.btnRemovemImageUpload).setOnClickListener(v ->{
-                ((RegisterActivity)  activity).removerFoto(position);
+                if (activity instanceof RegisterActivity) {
+                    ((RegisterActivity)  activity).removerFoto(position);
+                } else if (activity instanceof ClienteProfileActivity) {
+                    ((ClienteProfileActivity)  activity).removerFoto(position);
+                }
             });
         }
     }

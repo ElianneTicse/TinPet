@@ -104,11 +104,15 @@ public class RegisterLocationActivity extends AppCompatActivity implements OnMap
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: VALIDAR
-                mascota.setUbicacion(inputlocation.getText().toString());
-                Intent intent = new Intent(RegisterLocationActivity.this,PasswordActivity.class);
-                intent.putExtra("mascota",mascota);
-                startActivity(intent);
+                if(inputlocation!=null){
+                    mascota.setUbicacion(inputlocation.getText().toString());
+                    Intent intent = new Intent(RegisterLocationActivity.this,PasswordActivity.class);
+                    intent.putExtra("mascota",mascota);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(RegisterLocationActivity.this,"Ingrese una ubiación",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

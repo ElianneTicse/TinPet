@@ -11,8 +11,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,6 +62,7 @@
                 android:text="Ingresa la ubicación en la que te encuentras para poder encontrar peluditos cerca a tu zona"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp" />
+
             <TextView
                 style="@style/BlackRegularSubtittle14"
                 android:layout_width="374dp"
@@ -77,8 +80,8 @@
                 <EditText
                     android:id="@+id/etLocationRegister"
                     style="@style/InputWhite"
-                    android:layout_width="348dp"
-                    android:layout_height="30dp"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="8dp"
                     android:drawableStart="@drawable/inputicon_paw"
@@ -89,17 +92,18 @@
 
                 <ImageButton
                     android:id="@+id/ibSearchMap"
-                    android:layout_width="31dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTint="@color/white"
                     app:srcCompat="@drawable/inputicon_search" />
             </LinearLayout>
 
             <FrameLayout
                 android:id="@+id/containerMap"
                 android:layout_width="match_parent"
-                android:layout_marginHorizontal="16dp"
-                android:layout_height="350dp"/>
+                android:layout_height="350dp"
+                android:layout_marginHorizontal="16dp" />
 
             <Button
                 android:id="@+id/btnSiguienteLocation"
@@ -107,13 +111,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="100dp"
+                android:layout_marginBottom="20dp"
                 android:text="Siguiente" />
 
 
         </LinearLayout>
     </ScrollView>
+
     <ProgressBar
         android:visibility="gone"
         android:id="@+id/pbCreatePetLoading"

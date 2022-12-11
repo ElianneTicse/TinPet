@@ -22,14 +22,25 @@ public class Mascota implements Serializable {
     private String numeroDuenio;
     private String correoDuenio;
     private String ubicacion;
-    private String rol;
+    private String rol = "admi";
     private List<String> amigos;
     private String raza;
 
+    @Exclude
+    private Double nAmigos;
 
 
     public Mascota(){
     }
+
+    public Double getnAmigos() {
+        return nAmigos;
+    }
+
+    public void setnAmigos(Double nAmigos) {
+        this.nAmigos = nAmigos;
+    }
+
 
     public String getRaza() {
         return raza;

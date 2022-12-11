@@ -32,6 +32,7 @@
                     android:clickable="true"
                     android:paddingStart="16dp"
                     android:paddingEnd="12dp"
+                    android:onClick="backButtonA"
                     app:srcCompat="@drawable/btn_atras" />
 
                 <TextView

@@ -26,6 +26,8 @@ public class ClienteSolicitudesListActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     FirebaseAuth mAuth;
 
+    Boolean isBusy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,4 +65,11 @@ public class ClienteSolicitudesListActivity extends AppCompatActivity {
     public void backButtonSolicitudesList(View view){
         onBackPressed();
     }
+    @Override
+    public void onBackPressed() {
+        if (!isBusy){
+            super.onBackPressed();
+        }
+    }
+
 }

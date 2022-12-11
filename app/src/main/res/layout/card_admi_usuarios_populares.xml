@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#C5CAE9"
+        android:background="#E1BEE7"
         android:layout_gravity="center_vertical">
 
         <LinearLayout
             android:layout_width="203dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18sp"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp">
@@ -27,17 +28,19 @@
             <TextView
                 android:id="@+id/ivUsuarioPopularCardNombre"
                 style="@style/PinkSemiBoldSubtitle14"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lucy"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/ivUsuarioPopularCardNickname"
                 style="@style/WhiteLexendRegular13"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
+                android:textColor="#FFFFFF"
                 android:layout_marginBottom="4dp"
                 android:text="Lucycatdance" />
 
@@ -57,35 +60,37 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/poppins_regular"
                     android:text="Miraflores,Lima"
-                    android:textColor="@color/pink_100" />
+                    android:textColor="@color/pink_100"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="177dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp">
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="2dp">
 
             <TextView
                 android:id="@+id/tvUsuarioPopularCardNumber"
                 style="@style/PurpleSemiBold35"
                 android:layout_width="wrap_content"
-                android:layout_height="84dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="30"
                 android:textSize="60sp" />
 
             <TextView
                 style="@style/PinkSemiBoldSubtitle14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="amigos" />
+                android:text="amigos"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>

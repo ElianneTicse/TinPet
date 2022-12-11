@@ -1,5 +1,6 @@
 package com.example.tinpet.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ public class OnboardingAdapter extends PagerAdapter {
 
     Context context;
     LayoutInflater layoutInflater;
+    ConstraintLayout constraintlayout;
 
     int images[] = {
             R.drawable.onboarding_img1,
@@ -55,6 +57,7 @@ public class OnboardingAdapter extends PagerAdapter {
         return view == (ConstraintLayout) object;
     }
 
+    @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
@@ -75,6 +78,7 @@ public class OnboardingAdapter extends PagerAdapter {
             textViewText1.setText(heading[position]);
             textViewTitle2.setVisibility(View.INVISIBLE);
             textViewText2.setVisibility(View.INVISIBLE);
+
         }
         if (position == 1){
             textViewTitle2.setVisibility(View.VISIBLE);

@@ -21,13 +21,20 @@ public class AdmiReportesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admi_reportes);
+        setBottomNavigationView();
     }
 
     public void goUsuariosList(View view){
         startActivity(new Intent(AdmiReportesActivity.this,AdminUsuariosListActivity.class));
     }
 
+    public void goPeludosSeccionados(View view){
+        startActivity(new Intent(AdmiReportesActivity.this,AdmiPeludosSeccionadosActivity.class));
+    }
 
+    public void goPeludosPopulares(View view){
+        startActivity(new Intent(AdmiReportesActivity.this,AdmiUsuariosPopularesActivity.class));
+    }
 
 
     public void setBottomNavigationView(){

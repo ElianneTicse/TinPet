@@ -97,6 +97,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="goPeludosSeccionados"
         android:id="@+id/cvAdmiReportesPeludosSel"
         style="@style/PinkLightCard"
         android:layout_width="match_parent"
@@ -125,6 +126,7 @@
                 android:orientation="vertical">
 
                 <TextView
+
                     style="@style/WhiteLexendRegular18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,6 +150,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:onClick="goPeludosPopulares"
         android:id="@+id/cvAdmiReportesPeludosPop"
         style="@style/PinkLightCard"
         android:layout_width="match_parent"

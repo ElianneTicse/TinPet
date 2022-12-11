@@ -6,49 +6,50 @@
     android:layout_height="match_parent"
     android:background="#CCF8A80D">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="241dp"
-        android:layout_height="348dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_patito" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="376dp"
-        android:layout_height="134dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/ic_tinpet_style" />
-
-    <TextView
-        style="@style/WhiteMedium10"
-        android:textSize="20sp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:text="Te damos la bienvenida a nuestra comunidad, empieza a interactuar y conocer amigos peludos."
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnIniciarSesionWelcome"
-        android:onClick="sigIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#FF6A9A"
-        android:fontFamily="@font/lexend_regular"
-        android:text="Iniciar sesión"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="220dp"
+                android:layout_height="346dp"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/ic_patito" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="288dp"
+                android:layout_height="132dp"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/ic_tinpet_style" />
+
+            <TextView
+                style="@style/WhiteMedium10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:text="Te damos la bienvenida a nuestra comunidad, empieza a interactuar y conocer amigos peludos."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnIniciarSesionWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FF6A9A"
+                android:fontFamily="@font/lexend_regular"
+                android:onClick="sigIn"
+                android:text="Iniciar sesión" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

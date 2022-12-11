@@ -19,6 +19,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.tinpet.Entity.Mascota;
 import com.example.tinpet.Entity.Solicitudes;
 import com.example.tinpet.R;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -43,6 +44,8 @@ public class ClienteDetallesProfileActivity extends AppCompatActivity {
     MapView mapView;
     List<String> listaAmigos;
     ImageSlider imgSlider;
+
+
 
     String pendiente1 = "";
     String idsoli;
